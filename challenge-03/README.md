@@ -32,7 +32,7 @@ Adicione um método ao objeto `pessoa` chamado `fazerAniversario`. O método dev
 alterar o valor da propriedade `idade` dessa pessoa, somando `1` a cada vez que
 for chamado.
 */
-pessoa.aniversario=function(){
+pessoa.fazerAniversario=function(){
     pessoa.idade++;
 }
 
@@ -191,12 +191,12 @@ método), que será concatenada com a frase de retorno, mostrando a resposta
 correta, de acordo com os dados inseridos no objeto.
 */
 pessoa.apresentacao=function (){
-    var genero;
-    var maisDeUmAno;
-    var maisDeUmMetro;
-    if(pessoa.sexo===("M")||pessoa.sexo===("m")){genero=" o "}else{genero=" a "};
-    if(pessoa.idade>1){maisDeUmAno='anos'}else{maisDeUmAno='ano'};
-    if(pessoa.caminhouQuantosMetros>1){maisDeUmMetro='metros'}else{maisDeUmMetro='metro'};
+    var genero=" o ";
+    var maisDeUmAno="anos";
+    var maisDeUmMetro="metros";
+    if(pessoa.sexo===("F")||pessoa.sexo===("f")){genero=" a "};
+    if(pessoa.idade===1){maisDeUmAno='ano'};
+    if(pessoa.caminhouQuantosMetros===1){maisDeUmMetro='metro'};
     return "Olá, eu sou "+genero+" " +pessoa.nome+" "+pessoa.sobrenome+", tenho " +pessoa.idade+ " "+maisDeUmAno+"," +pessoa.altura+",meu peso é "+pessoa.peso+ "Kg e, só hoje, eu já caminhei "+pessoa.caminhouQuantosMetros+ " "+maisDeUmMetro+"!";
 }
 
