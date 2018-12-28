@@ -9,6 +9,8 @@ para o contrário.
 */
 var isTruthy= function(x){
      return x ? true : false;
+     //if()
+     //return !!param;
 }
 
 // Invoque a função criada acima, passando todos os tipos de valores `falsy`.
@@ -69,7 +71,7 @@ seguintes propriedades (os valores devem ser do tipo mostrado abaixo):
 var carro ={
 marca :'Fiat',
 modelo :'Mobi',
-placa :'Fiat',
+placa :'ABC-1234',
 ano :2011,
 cor :'Verde',
 quantasPortas : 4,
@@ -112,7 +114,7 @@ Crie um método chamado `obterMarcaModelo`, que retorne:
 Para retornar os valores de marca e modelo, utilize os métodos criados.
 */
 carro.obterMarcaModelo= function(){
-    return "Esse carro é um "+carro.marca+" "+carro.modelo;
+    return "Esse carro é um "+carro.obterMarca()+" "+carro.obterModelo();
 }
 
 /*
@@ -131,22 +133,20 @@ mostrar quantos assentos ainda podem ser ocupados, com a frase:
 - Se couber somente mais uma pessoa, mostrar a palavra "pessoa" no retorno
 citado acima, no lugar de "pessoas".
 */
-carro.adcionarPessoas = function(pessoas){
-    var vagas=carro.assentos;
-    var plural= "pessoas";
-    carro.quantidadePessoas=0;
-    if(pessoas > vagas){
-        return "O carro só comporta "+vagas+" pessoas!";
-    }else if(pessoas <= vagas){
-        vagas=vagas-pessoas;
-        vagas ===1 ? plural="pessoa":plural;
-        return "Só cabem mais " +vagas+ " "+plural+" no carro!";
-        carro.quantidadePessoas-=vagas;
+carro.adicionarPessoas = function(qtdPessoas){
+    var totalPessoas=carro.quantidadePessoas+qtdPessoas;
+    var quantasPessoasCabem = carro.assentos-carro.quantidadePessoas;
+    var plural = quantasPessoasCabem === 1?" pessoa":" pessoas";
     
-    }else{
-        return "Já temos " +pessoas+ " pessoas no carro!";
-        carro.quantidadePessoas-=vagas;
+    if(carro.quantidadePessoas === carro.assentos && totalPessoas >= carro.assentos){
+       return "O carro já está lotado!";
     }
+    if(totalPessoas > carro.assentos){
+       
+        return "Só cabem mais "+ quantasPessoasCabem +plural+"no carro!";
+    }
+    carro.quantidadePessoas+=qtdPessoas;
+    return "Já temos " +carro.quantidadePessoas+ " pessoas no carro!";
 }
 
 /*
@@ -157,38 +157,47 @@ retornar algum valor.
 
 Qual a cor atual do carro?
 */
-?
+carro.obterCor()
+//'Verde'
 
 // Mude a cor do carro para vermelho.
-?
+carro.cor='azul'
 
 // E agora, qual a cor do carro?
-?
+carro.obterCor()
+'azul'
 
 // Mude a cor do carro para verde musgo.
-?
+carro.cor='verde musgo'
 
 // E agora, qual a cor do carro?
-?
+carro.obterCor()
+//'verde musgo'
 
 // Qual a marca e modelo do carro?
-?
+carro.obterMarcaModelo()
+//'Esse carro é um Fiat Mobi'
 
 // Adicione 2 pessoas no carro.
-?
+carro.adicionarPessoas(2)
+//'Já temos 2 pessoas no carro!'
 
 // Adicione mais 4 pessoas no carro.
-?
+carro.adicionarPessoas(4)
+//'Só cabem mais 3 pessoasno carro!'
 
 // Faça o carro encher.
-?
+carro.adicionarPessoas(3)
+//'Já temos 5 pessoas no carro!'
 
 // Tire 4 pessoas do carro.
-?
+carro.adicionarPessoas(-4)
+//'Já temos 1 pessoas no carro!'
 
 // Adicione 10 pessoas no carro.
-?
+carro.adicionarPessoas(10)
+//'Só cabem mais 4 pessoasno carro!'
 
 // Quantas pessoas temos no carro?
-?
+//1
 ```
