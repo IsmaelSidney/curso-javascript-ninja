@@ -13,7 +13,7 @@ Os elementos serão nomes de times do campeonato escolhido, e os nomes devem
 estar na ordem em que eles aparecem na tabela no momento da solução desse
 desafio.
 */
-var teams=[´Fortaleza','Ceará','Ferroviário','Floresta','Atlético'];
+var teams=['Fortaleza','Ceará','Ferroviário','Floresta','Atlético'];
 
 console.log( 'Times que estão participando do campeonato:', teams );
 
@@ -34,16 +34,16 @@ Crie uma função chamada `showTeamPosition` com as seguintes características:
     "Não temos a informação do time que está nessa posição."
 */
 function showTeamPosition(posicao){
-          if(position>=6 ||position ===0){
+          if(posicao >=6 ||posicao ===0){
            return "Não temos a informação do time que está nessa posição."
-    return   "O time que está em "+posicao+"º lugar é o "+teams[posicao-1]+".";
-    
-           }
-
+     }
+     return   "O time que está em "+posicao+"º lugar é o "+teams[posicao-1]+".";
+        }
 /*
 Escolha 4 times do campeonato selecionado e mostre a posição dele, usando a
 função acima. Entre esses 4, adicione 1 que não esteja entre os 5 primeiros.
 */
+
 console.log(showTeamPosition(1));
 console.log(showTeamPosition(2));
 console.log( showTeamPosition(3));
@@ -73,27 +73,36 @@ Crie uma função chamada `convertToHex`, com as seguintes características:
     "Não temos o equivalente hexadecimal para [COR]."
 */
 function convertToHex(cor){
+    var coresHex=['#0000ff ','#00ff00','#ff0000','#ffff00','#ffc0cb']
   switch(cor){
-      case azul:
-  return "O hexadecimal para a cor "+[COR]+" é "+[HEXADECIMAL]+".";
+      case 'blue':
+  return "O hexadecimal para a cor "+cor+" é "+coresHex[0]+".";
       break;
-      case azul:
-  return "O hexadecimal para a cor " +[COR]+" é "+[HEXADECIMAL]+".";
+      case 'green':
+  return "O hexadecimal para a cor " +cor+" é "+coresHex[1]+".";
       break;
-      case azul:
-  return "O hexadecimal para a cor "+[COR]+" é "+[HEXADECIMAL]+".";
+      case 'red':
+  return "O hexadecimal para a cor "+cor+" é "+coresHex[2]+".";
       break;
-      case azul:
-  return "O hexadecimal para a cor "+[COR]+" é "+[HEXADECIMAL]+".";
+      case 'yellow':
+  return "O hexadecimal para a cor "+cor+" é "+coresHex[3]+".";
       break;
-      case azul:
-  return "O hexadecimal para a cor "+[COR]+" é "+[HEXADECIMAL]+".";
+      case 'pink':
+  return "O hexadecimal para a cor "+cor+" é "+coresHex[4]+".";
       break;
       default:
-      return "Não temos o equivalente hexadecimal para "+[COR]+"."
+      return "Não temos o equivalente hexadecimal para "+cor+"."
   }
-
+}
 /*
 Tente mostrar o hexadecimal de 8 cores diferentes usando a função criada acima.
 */
-// ?
+console.log(convertToHex('blue'));
+console.log(convertToHex('green'));
+console.log(convertToHex('yellow'));
+console.log(convertToHex('red'));
+console.log(convertToHex('pink'));
+console.log(convertToHex('black'));
+console.log(convertToHex('gray'));
+console.log(convertToHex('white'));
+;
