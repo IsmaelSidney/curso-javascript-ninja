@@ -34,7 +34,7 @@ Crie uma função chamada `showTeamPosition` com as seguintes características:
     "Não temos a informação do time que está nessa posição."
 */
 function showTeamPosition(posicao){
-          if(posicao >=6 ||posicao ===0){
+          if(posicao >5 ||posicao < 1){
            return "Não temos a informação do time que está nessa posição."
      }
      return   "O time que está em "+posicao+"º lugar é o "+teams[posicao-1]+".";
