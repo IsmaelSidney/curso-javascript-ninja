@@ -105,4 +105,4 @@ console.log(convertToHex('pink'));
 console.log(convertToHex('black'));
 console.log(convertToHex('gray'));
 console.log(convertToHex('white'));
-;
+//  
