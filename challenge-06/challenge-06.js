@@ -97,7 +97,8 @@ function convertToHex(cor){
       break;
       default:
       return "Não temos o equivalente hexadecimal para "+cor+"."
-  }return "O hexadecimal para a cor "+cor+" é "+hex+".";
+  }
+  return "O hexadecimal para a cor "+cor+" é "+hex+".";
 }
 /*
 Tente mostrar o hexadecimal de 8 cores diferentes usando a função criada acima.
