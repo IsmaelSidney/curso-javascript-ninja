@@ -76,23 +76,28 @@ function convertToHex(cor){
     var coresHex=['#0000ff ','#00ff00','#ff0000','#ffff00','#ffc0cb']
   switch(cor){
       case 'blue':
-  return "O hexadecimal para a cor "+cor+" é "+coresHex[0]+".";
+      hex=coresHex[0];
+ 
       break;
       case 'green':
-  return "O hexadecimal para a cor " +cor+" é "+coresHex[1]+".";
+      hex=coresHex[1];
+  
       break;
       case 'red':
-  return "O hexadecimal para a cor "+cor+" é "+coresHex[2]+".";
+      hex=coresHex[2];
+  
       break;
       case 'yellow':
-  return "O hexadecimal para a cor "+cor+" é "+coresHex[3]+".";
+      hex=coresHex[3];
+  
       break;
       case 'pink':
-  return "O hexadecimal para a cor "+cor+" é "+coresHex[4]+".";
+      hex=coresHex[4];
+  
       break;
       default:
       return "Não temos o equivalente hexadecimal para "+cor+"."
-  }
+  }return "O hexadecimal para a cor "+cor+" é "+hex+".";
 }
 /*
 Tente mostrar o hexadecimal de 8 cores diferentes usando a função criada acima.
